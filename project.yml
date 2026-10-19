@@ -16,6 +16,10 @@ settings:
 
 targets:
   FEnote:
+    scheme:
+      testTargets:
+        - FEnoteTests
+        - FEnoteUITests
     type: application
     platform: iOS
     sources:
@@ -60,3 +64,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.fenote.tests
         GENERATE_INFOPLIST_FILE: YES
+
+  FEnoteUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - UITests
+    dependencies:
+      - target: FEnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.beqd1106.fenote.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: FEnote

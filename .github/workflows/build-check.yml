@@ -40,5 +40,6 @@ jobs:
             -project "FEnote.xcodeproj" \
             -scheme "FEnote" \
             -destination "platform=iOS Simulator,name=${DEVICE:-iPhone 16}" \
+            -skip-testing:FEnoteUITests \
             CODE_SIGNING_ALLOWED=NO \
             test
